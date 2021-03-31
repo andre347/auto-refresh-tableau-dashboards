@@ -33,6 +33,18 @@ function initViz() {
   viz = new tableau.Viz(vizContainer, url, options);
 }
 
+function resizeViz() {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  viz.setFrameSize(width, height);
+}
+
+// resize the window and resize the viz
+window.addEventListener("resize", () => {
+  console.log("Resizing window");
+  resizeViz();
+});
+
 // start.addEventListener("click", () => {
 //   // change the status
 //   document.getElementById("status").innerHTML = `Refreshing every ${time} ms`;
